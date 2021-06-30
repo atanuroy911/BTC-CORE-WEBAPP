@@ -1,0 +1,299 @@
+@startuml
+
+title __BTCEXPLORER's Class Diagram__\n
+
+  namespace  {
+    class MavenWrapperDownloader {
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      class com.jxust.btcexplorer.BtcexplorerApplication {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        class com.jxust.btcexplorer.btcrpc.TestMain {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.BaseBean {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.BaseEntity {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.Bip {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.BipDetail {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.Block {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.BlockChainInfo {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.BlockInfo {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.CreateWallet {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.Difficulty {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.GetWalletInfo {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.MiningInfo {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.RpcInfo {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.Softforks {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.TapRoot {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.ValidateAddress {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.active_commands {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace httputils {
+          class com.jxust.btcexplorer.btcrpc.httputils.HttpExecuteUtil {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace httputils {
+          class com.jxust.btcexplorer.btcrpc.httputils.RPCRequest {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace service {
+          class com.jxust.btcexplorer.btcrpc.service.BTCService {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace controller {
+        class com.jxust.btcexplorer.controller.BTCRPCController {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace controller {
+        class com.jxust.btcexplorer.controller.IndexController {
+        }
+      }
+    }
+  }
+  
+
+  com.jxust.btcexplorer.btcrpc.entity.BaseBean o-- T : result
+  com.jxust.btcexplorer.btcrpc.entity.BaseEntity o-- T : result
+  com.jxust.btcexplorer.btcrpc.entity.BlockChainInfo o-- com.jxust.btcexplorer.btcrpc.entity.Softforks : softforks
+  com.jxust.btcexplorer.btcrpc.entity.BlockInfo o-- com.jxust.btcexplorer.btcrpc.entity.Block : result
+  com.jxust.btcexplorer.btcrpc.entity.RpcInfo o-- com.jxust.btcexplorer.btcrpc.entity.active_commands : active_commands
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.Bip : bip34
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.Bip : bip65
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.Bip : bip66
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.Bip : csv
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.Bip : segwit
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.TapRoot : taproot
+  com.jxust.btcexplorer.btcrpc.entity.TapRoot o-- com.jxust.btcexplorer.btcrpc.entity.BipDetail : bip9
+  com.jxust.btcexplorer.controller.BTCRPCController o-- com.jxust.btcexplorer.btcrpc.service.BTCService : service
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

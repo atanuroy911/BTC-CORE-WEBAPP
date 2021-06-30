@@ -1,0 +1,491 @@
+@startuml
+
+title __ENTITY's Class Diagram__\n
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.BaseBean {
+              - error : Object
+              - id : long
+              + getError()
+              + getId()
+              + getResult()
+              + setError()
+              + setId()
+              + setResult()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.BaseEntity {
+              - error : Object
+              - id : long
+              + getError()
+              + getId()
+              + getResult()
+              + setError()
+              + setId()
+              + setResult()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.Bip {
+              - active : boolean
+              - height : long
+              - type : String
+              + getHeight()
+              + getType()
+              + isActive()
+              + setActive()
+              + setHeight()
+              + setType()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.BipDetail {
+              - min_activation_height : long
+              - since : int
+              - start_time : long
+              - status : String
+              - timeout : long
+              + getMin_activation_height()
+              + getSince()
+              + getStart_time()
+              + getStatus()
+              + getTimeout()
+              + setMin_activation_height()
+              + setSince()
+              + setStart_time()
+              + setStatus()
+              + setTimeout()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.Block {
+              - bits : String
+              - chainwork : String
+              - confirmations : int
+              - difficulty : int
+              - hash : String
+              - height : int
+              - mediantime : long
+              - merkleroot : String
+              - nTx : int
+              - nextblockhash : String
+              - nonce : long
+              - size : int
+              - strippedsize : int
+              - time : long
+              - tx : String[]
+              - version : int
+              - versionHex : String
+              - weight : int
+              + getBits()
+              + getChainwork()
+              + getConfirmations()
+              + getDifficulty()
+              + getHash()
+              + getHeight()
+              + getMediantime()
+              + getMerkleroot()
+              + getNextblockhash()
+              + getNonce()
+              + getSize()
+              + getStrippedsize()
+              + getTime()
+              + getTx()
+              + getVersion()
+              + getVersionHex()
+              + getWeight()
+              + getnTx()
+              + setBits()
+              + setChainwork()
+              + setConfirmations()
+              + setDifficulty()
+              + setHash()
+              + setHeight()
+              + setMediantime()
+              + setMerkleroot()
+              + setNextblockhash()
+              + setNonce()
+              + setSize()
+              + setStrippedsize()
+              + setTime()
+              + setTx()
+              + setVersion()
+              + setVersionHex()
+              + setWeight()
+              + setnTx()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.BlockChainInfo {
+              - bestblockhash : String
+              - blocks : int
+              - chain : String
+              - chainwork : String
+              - difficulty : double
+              - headers : int
+              - initialblockdownload : boolean
+              - mediantime : long
+              - pruned : boolean
+              - size_on_disk : long
+              - verificationprogress : double
+              - warnings : String
+              + getBestblockhash()
+              + getBlocks()
+              + getChain()
+              + getChainwork()
+              + getDifficulty()
+              + getHeaders()
+              + getMediantime()
+              + getSize_on_disk()
+              + getSoftforks()
+              + getVerificationprogress()
+              + getWarnings()
+              + isInitialblockdownload()
+              + isPruned()
+              + setBestblockhash()
+              + setBlocks()
+              + setChain()
+              + setChainwork()
+              + setDifficulty()
+              + setHeaders()
+              + setInitialblockdownload()
+              + setMediantime()
+              + setPruned()
+              + setSize_on_disk()
+              + setSoftforks()
+              + setVerificationprogress()
+              + setWarnings()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.BlockInfo {
+              - error : Object
+              - id : long
+              + getError()
+              + getId()
+              + getResult()
+              + setError()
+              + setId()
+              + setResult()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.CreateWallet {
+              - name : String
+              - warning : String
+              + getName()
+              + getWarning()
+              + setName()
+              + setWarning()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.Difficulty {
+              - error : Object
+              - id : long
+              - result : double
+              + getError()
+              + getId()
+              + getResult()
+              + setError()
+              + setId()
+              + setResult()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.GetWalletInfo {
+              - avoid_reuse : boolean
+              - balance : double
+              - descriptors : boolean
+              - format : String
+              - hdseedid : String
+              - immature_balance : double
+              - keypoololdest : int
+              - keypoolsize : int
+              - keypoolsize_hd_internal : int
+              - paytxfee : double
+              - private_keys_enabled : boolean
+              - scanning : boolean
+              - txcount : int
+              - unconfirmed_balance : double
+              - walletname : String
+              - walletversion : int
+              + getBalance()
+              + getFormat()
+              + getHdseedid()
+              + getImmature_balance()
+              + getKeypoololdest()
+              + getKeypoolsize()
+              + getKeypoolsize_hd_internal()
+              + getPaytxfee()
+              + getTxcount()
+              + getUnconfirmed_balance()
+              + getWalletname()
+              + getWalletversion()
+              + isAvoid_reuse()
+              + isDescriptors()
+              + isPrivate_keys_enabled()
+              + isScanning()
+              + setAvoid_reuse()
+              + setBalance()
+              + setDescriptors()
+              + setFormat()
+              + setHdseedid()
+              + setImmature_balance()
+              + setKeypoololdest()
+              + setKeypoolsize()
+              + setKeypoolsize_hd_internal()
+              + setPaytxfee()
+              + setPrivate_keys_enabled()
+              + setScanning()
+              + setTxcount()
+              + setUnconfirmed_balance()
+              + setWalletname()
+              + setWalletversion()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.MiningInfo {
+              - blocks : int
+              - chain : String
+              - difficulty : int
+              - networkhashups : int
+              - pooledtx : int
+              - warnings : String
+              + getBlocks()
+              + getChain()
+              + getDifficulty()
+              + getNetworkhashups()
+              + getPooledtx()
+              + getWarnings()
+              + setBlocks()
+              + setChain()
+              + setDifficulty()
+              + setNetworkhashups()
+              + setPooledtx()
+              + setWarnings()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.RpcInfo {
+              - logpath : String
+              + getActive_commands()
+              + getLogpath()
+              + setActive_commands()
+              + setLogpath()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.Softforks {
+              + getBip34()
+              + getBip65()
+              + getBip66()
+              + getCsv()
+              + getSegwit()
+              + getTaproot()
+              + setBip34()
+              + setBip65()
+              + setBip66()
+              + setCsv()
+              + setSegwit()
+              + setTaproot()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.TapRoot {
+              - active : boolean
+              - type : String
+              + getBip9()
+              + getType()
+              + isActive()
+              + setActive()
+              + setBip9()
+              + setType()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.ValidateAddress {
+              - address : String
+              - isscript : boolean
+              - isvalid : boolean
+              - iswitness : boolean
+              - scriptPubKey : String
+              - witness_program : String
+              - witness_version : int
+              + getAddress()
+              + getScriptPubKey()
+              + getWitness_program()
+              + getWitness_version()
+              + isIsscript()
+              + isIsvalid()
+              + isIswitness()
+              + setAddress()
+              + setIsscript()
+              + setIsvalid()
+              + setIswitness()
+              + setScriptPubKey()
+              + setWitness_program()
+              + setWitness_version()
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.jxust.btcexplorer {
+      namespace btcrpc {
+        namespace entity {
+          class com.jxust.btcexplorer.btcrpc.entity.active_commands {
+              - duration : int
+              - method : String
+              + getDuration()
+              + getMethod()
+              + setDuration()
+              + setMethod()
+          }
+        }
+      }
+    }
+  }
+  
+
+  com.jxust.btcexplorer.btcrpc.entity.BaseBean o-- T : result
+  com.jxust.btcexplorer.btcrpc.entity.BaseEntity o-- T : result
+  com.jxust.btcexplorer.btcrpc.entity.BlockChainInfo o-- com.jxust.btcexplorer.btcrpc.entity.Softforks : softforks
+  com.jxust.btcexplorer.btcrpc.entity.BlockInfo o-- com.jxust.btcexplorer.btcrpc.entity.Block : result
+  com.jxust.btcexplorer.btcrpc.entity.RpcInfo o-- com.jxust.btcexplorer.btcrpc.entity.active_commands : active_commands
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.Bip : bip34
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.Bip : bip65
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.Bip : bip66
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.Bip : csv
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.Bip : segwit
+  com.jxust.btcexplorer.btcrpc.entity.Softforks o-- com.jxust.btcexplorer.btcrpc.entity.TapRoot : taproot
+  com.jxust.btcexplorer.btcrpc.entity.TapRoot o-- com.jxust.btcexplorer.btcrpc.entity.BipDetail : bip9
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

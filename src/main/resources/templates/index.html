@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="js/jquery-3.6.0.js"></script>
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>BTC-Core | Interface</title>
+  
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+.column3 {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+<header class="cd-header flex flex-column flex-center">
+  <div class="text-component text-center">
+    <h1>Bitcoin Core Explorer</h1>
+    <p>Communicate with bitcoin core from browser</a></p>
+  </div>
+</header>
+
+<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
+	<ul class="cd-faq__categories">
+		<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#blockchain">BlockChain</a></li>
+		<li><a class="cd-faq__category truncate" href="#control">Control</a></li>
+		<li><a class="cd-faq__category truncate" href="#generating">Generating</a></li>
+		<li><a class="cd-faq__category truncate" href="#mining">Mining</a></li>
+		<li><a class="cd-faq__category truncate" href="#network">Network</a></li>
+		<li><a class="cd-faq__category truncate" href="#raw_transactions">Raw Transactions</a></li>
+		<li><a class="cd-faq__category truncate" href="#util">Util</a></li>
+		<li><a class="cd-faq__category truncate" href="#wallet">Wallet</a></li>
+		<li><a class="cd-faq__category truncate" href="#zmq">Zmq</a></li>
+	</ul> <!-- cd-faq__categories -->
+
+	<div class="cd-faq__items">
+		<ul id="blockchain" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>BlockChain</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>GetBlockHash</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+				  <form id = "getblockhash" method="get">
+					  block number：<input type="number" name="height" placeholder="please input a number of block"/>
+					  <input type="submit" class="btn--subtle" value="Submit">
+				  </form>
+
+			  <div id = "getblockhashresult" th:fragment="getblockhashresult">
+				  <br>
+				  <br>
+				  <span th:text="${hash}"></span>
+			  </div>
+		  </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>GetBlockChainInfo</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "getblockchaininfo" method="get">
+							<label for="blockchaininfoparameter">Choose an Info Parameter:</label>
+							<select id="blockchaininfoparameter" name="blockchaininfoparam">
+								<option value="chain">Chain</option>
+								<option value="blocks">Blocks</option>
+								<option value="headers">Headers</option>
+								<option value="bestblockhash">Best Block Hash</option>
+								<option value="mediantime">Median Time</option>
+								<option value="difficulty">Difficulty</option>
+								<option value="verificiationprogress">Verification Progress</option>
+								<option value="chainworkd">Chainwork</option>
+								<option value="sizeondisk">sizeondisk</option>
+								<option value="softforks">Softforks</option>
+								<option value="warnings">Warning</option>
+							</select>
+							<input type="submit" class="btn--subtle" value="Submit">
+						</form>
+
+						<p>Note: All functions are not covered here</p>
+
+						<div id = "getblockchaininforesult" th:fragment="getblockchaininforesult">
+							<br>
+							<br>
+							<span th:text="${getblockchaininforesult}"></span>
+						</div>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>GetBlock</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "getblock" method="get">
+							Hash：<input type="text" name="hash" placeholder="Please Enter a Hash"/>
+							<input type="submit" class="btn--subtle" value="Submit">
+						</form>
+
+						<div id = "getblockresult" th:fragment="getblockresult">
+							<br>
+							<br>
+							<div>
+								<p>Chainwork : <span th:text="${getblockchainwork}"></span></p>
+								<p>Difficulty : <span th:text="${getblockdifficulty}"></span></p>
+								<p>Confirmation : <span th:text="${getblockconfirmation}"></span></p>
+								<p>Merkle Root : <span th:text="${getmerkleroot}"></span></p>
+							</div>
+
+						</div>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>GetDifficulty</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "getdifficulty" method="get" >
+							<input type="hidden" name="dummy" />
+							<input type="submit" class="btn--subtle" value="Get Difficulty">
+						</form>
+
+						<div id = "getdifficultyresult" th:fragment="getdifficultyresult">
+							<br>
+							<br>
+							<p>BlockChain's Current Difficulty: <span th:text="${getdifficulty}"></span></p>
+						</div>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>GetBlockCount</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "getblockcount" method="get" >
+							<input type="hidden" name="dummy" />
+							<input type="submit" class="btn--subtle" value="Get Block Count">
+						</form>
+
+						<div id = "getblockcountresult" th:fragment="getblockcountresult">
+							<br>
+							<br>
+							<p>Block Count: <span th:text="${getblockcount}"></span></p>
+						</div>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>GetBestBlockHash</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "getbestblockhash" method="get" >
+							<input type="hidden" name="dummy" />
+							<input type="submit" class="btn--subtle" value="Get Difficulty">
+						</form>
+
+						<div id = "getbestblockhashresult" th:fragment="getbestblockhashresult">
+							<br>
+							<br>
+							<p>Best Block Hash: <span th:text="${getbestblockhash}"></span></p>
+						</div>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="network" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Network</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#1"><span>Ping</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "ping" method="get" >
+							<input type="hidden" name="dummy" />
+							<input type="submit" class="btn--subtle" value="Send Ping">
+						</form>
+
+						<div id = "pingresult" th:fragment="pingresult">
+							<br>
+							<br>
+							<p>Response: <span th:text="${ping_result}"></span></p>
+
+						</div>
+
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#1"><span>SetNetworkState</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "netstate" method="get" >
+							<select id="networkstate" name="netowrkstate">
+								<option value="true">True</option>
+								<option value="false">False</option>
+							</select>
+							<input type="submit" class="btn--subtle" value="Set Network State">
+						</form>
+
+						<div id = "netstateresult" th:fragment="netstateresult">
+							<br>
+							<br>
+							<p>Response: <span th:text="${netstate_result}"></span></p>
+
+						</div>
+
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="control" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Control</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#1"><span>GetRPCInfo</span></a>
+				<div class="cd-faq__content">
+          <div class="text-component">
+			  <form id = "getrpcinfo" method="get" >
+				  <input type="hidden" name="dummy" />
+				  <input type="submit" class="btn--subtle" value="Get RPC Info">
+			  </form>
+
+			  <div id = "getrpcinforesult" th:fragment="getrpcinforesult">
+				  <br>
+				  <br>
+				  <p>Bitcoin RPC Logpath: <span th:text="${rpcinfo_logpath}"></span></p>
+
+			  </div>
+
+		  </div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="mining" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Mining</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#1"><span>GetMiningInfo</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "getmininginfo" method="get" >
+							<input type="hidden" name="dummy" />
+							<input type="submit" class="btn--subtle" value="Get RPC Info">
+						</form>
+
+						<div id = "getmininginforesult" th:fragment="getmininginforesult">
+							<br>
+							<br>
+							<p>blocks: <span th:text="${miningInfoGetBlocks}"></span></p>
+							<p>difficulty: <span th:text="${miningInfoGetDifficulty}"></span></p>
+							<p>networkhashups: <span th:text="${miningInfoGetNetHash}"></span></p>
+							<p>pooledtx: <span th:text="${miningInfoGetPool}"></span></p>
+							<p>chain: <span th:text="${miningInfoGetChain}"></span></p>
+							<p>warnings: <span th:text="${miningInfoGetWarning}"></span></p>
+
+						</div>
+
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="util" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Util</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#1"><span>ValidateAddress</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "validateaddress" method="get" >
+							<input type="text" name="address" placeholder="Enter a Bitcoin Wallet Address here" required />
+							<input type="submit" class="btn--subtle" value="Is Address Valid ?">
+						</form>
+
+						<div id = "validateaddressresult" th:fragment="validateaddressresult">
+							<br>
+							<br>
+							<p>Validation Result: <span th:text="${isValid}"></span></p>
+							<p>Address: <span th:text="${addressV}"></span></p>
+							<p>Script Pub Key: <span th:text="${scriptPubKey}"></span></p>
+							<p>Is Script: <span th:text="${isScript}"></span></p>
+							<p>Is Witness: <span th:text="${isWitness}"></span></p>
+							<p>Witness Version: <span th:text="${witnessVersion}"></span></p>
+							<p>Witness Program: <span th:text="${witnessProgram}"></span></p>
+						</div>
+
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+
+
+		<ul id="wallet" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Wallet</h2></li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>CreateWallet</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "createwallet" method="get" >
+							Wallet Name：<input type="text" name="wallet_name" placeholder="Input a Wallet Name"/>
+							<input type="submit" class="btn--subtle" value="Create New Wallet">
+						</form>
+
+						<div id = "createwalletresult" th:fragment="createwalletresult">
+							<br>
+							<br>
+							<p>CreateWallet Result: <span th:text="${walletresult}"></span></p>
+						</div>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>GetNewAddress</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "getnewaddress" method="get" >
+							Label：<input type="text" name="label" placeholder="Optional"/>
+							<select id="getnewaddressparameter" name="addr_type">
+								<option value="legacy">Legacy</option>
+								<option value="p2sh-segwit">p2sh-segwit</option>
+								<option value="bech32">bech32</option>
+							</select>
+							<input type="submit" class="btn--subtle" value="Get New Address">
+						</form>
+
+						<div id = "getnewaddressresult" th:fragment="getnewaddressresult">
+							<br>
+							<br>
+							<p>New Address: <span th:text="${getnewaddress}"></span></p>
+						</div>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>ListWallets</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "listwallets" method="get" >
+							<input type="hidden" name="dummy" placeholder="Optional"/>
+							<input type="submit" class="btn--subtle" value="Get All Wallets">
+						</form>
+
+						<div id = "listwalletsresult" th:fragment="listwalletsresult">
+							<br>
+							<br>
+							<ul th:each="wallet : ${wallets}">
+								<li th:text="${wallet}"></li>
+							</ul>
+						</div>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>GetWalletInfo</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<form id = "getwalletinfo" method="get" >
+							<input type="hidden" name="dummy" placeholder="Optional"/>
+							<input type="submit" class="btn--subtle" value="Get Wallet Info">
+						</form>
+
+						<div id = "getwalletinforesult" th:fragment="getwalletinforesult">
+							<br>
+							<br>
+							<p>Wallet Name: <span th:text="${walletName}"></span></p>
+							<p>walletVersion: <span th:text="${walletVersion}"></span></p>
+							<p>Format Name: <span th:text="${format}"></span></p>
+							<p>Wallet Balance: <span th:text="${balance}"></span></p>
+							<p>Unconfirmed balance: <span th:text="${unconfirmed_balance}"></span></p>
+							<p>Immature Balance: <span th:text="${immature_balance}"></span></p>
+							<p>TX Count: <span th:text="${txcount}"></span></p>
+							<p>Key Pool Oldest: <span th:text="${keypoololdest}"></span></p>
+							<p>Key Pool Size: <span th:text="${keypoolsize}"></span></p>
+							<p>HD Seed ID: <span th:text="${hdseedid}"></span></p>
+							<p>keypoolsize_hd_internal: <span th:text="${keypoolsize_hd_internal}"></span></p>
+							<p>Pay TX Fee: <span th:text="${paytxfee}"></span></p>
+							<p>private_keys_enabled: <span th:text="${private_keys_enabled}"></span></p>
+							<p>avoid_reuse: <span th:text="${avoid_reuse}"></span></p>
+							<p>scanning: <span th:text="${scanning}"></span></p>
+							<p>descriptors: <span th:text="${descriptors}"></span></p>
+						</div>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+
+		</ul> <!-- cd-faq__group -->
+
+
+	</div> <!-- cd-faq__items -->
+
+	<a href="#x" class="cd-faq__close-panel text-replace">Close</a>
+  
+  <div class="cd-faq__overlay" aria-hidden="true"></div>
+</section> <!-- cd-faq -->
+<script src="js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+<script src="js/main.js"></script>
+
+<script>
+
+	$('.btn--subtle').click(function () {
+		var form_id = $(this).closest("form").attr("id");
+		var form_id_tag = '#' + form_id
+		var form_result = form_id_tag + "result";
+		var url = '/' + form_id;
+		var data = $(form_id_tag).serialize();
+		$.ajax({
+			url: url + "?" + data,
+			type: 'GET',
+			success: function (data) {
+				$(form_result).html(data);
+				// alert(data);
+			}
+		})
+		return false;
+
+	})
+</script>
+</body>
+</html>
